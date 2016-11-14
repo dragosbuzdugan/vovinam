@@ -1,0 +1,13 @@
+*/build/
+build/
+.gradle/
+.idea/
+/api/src/main/resources/credentials-default.properties
+/classes
+*.iml
+/logic/src/main/resources/storage-production.properties
+/logic/src/main/resources/storage-test.properties
+/logic/src/main/resources/storage-staging.properties
+out/
+/.classpath
+/.project
