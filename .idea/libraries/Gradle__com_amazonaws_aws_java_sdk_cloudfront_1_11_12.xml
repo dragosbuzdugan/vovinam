@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.amazonaws:aws-java-sdk-cloudfront:1.11.12">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-cloudfront/1.11.12/ad2a8ccf3ec3baf2de36caefcb5e9e974f1c30c5/aws-java-sdk-cloudfront-1.11.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-cloudfront/1.11.12/d221600f1e70f38912a923109c8ee9391d53c711/aws-java-sdk-cloudfront-1.11.12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

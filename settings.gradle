@@ -1,0 +1,5 @@
+rootProject.name = 'vovinam'
+include 'api'
+include 'vovinam-logic'
+
+

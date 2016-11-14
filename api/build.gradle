@@ -1,0 +1,62 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+bootRun {
+    systemProperties System.properties
+}
+
+war {
+    baseName = 'api'
+    version = '1.0-SNAPSHOT'
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+
+   // compile project(":security")
+    compile project(":vovinam-logic")
+
+//    compile group: 'org.codehaus.janino',           name: 'janino',                 version:'2.7.8'
+//    compile group: 'javax.servlet',                 name: 'javax.servlet-api',      version: servletVersion
+//    compile group: 'com.github.ben-manes.caffeine', name: 'caffeine',               version: '2.3.1'
+//    compile group: 'com.github.ben-manes.caffeine', name: 'jcache',                 version: '2.3.1'
+//    compile group: 'com.logentries',                name: 'logentries-appender',    version: '1.1.32'
+
+   /* compile group: 'com.fasterxml.jackson.core',    name:'jackson-core',            version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core',    name:'jackson-databind',        version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core',    name:'jackson-annotations',     version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.datatype',name:'jackson-datatype-jdk8',   version: jacksonVersion*/
+
+
+    compile group: 'org.springframework.boot',  name:'spring-boot-starter',         version: springBootVersion
+    compile group: 'org.springframework.boot',  name:'spring-boot-starter-web',     version: springBootVersion
+    compile group: 'org.springframework.boot',  name:'spring-boot-starter-hateoas', version: springBootVersion
+    compile group: 'org.springframework.data',  name:'spring-data-rest-hal-browser',version: springDataRestVersion
+
+    compile("org.springframework.boot:spring-boot-starter-data-rest:${springBootVersion}") {
+        exclude module: "spring-data-rest-webmvc"
+    }
+    compile("org.springframework.data:spring-data-rest-webmvc:${springDataRestVersion}"){
+        exclude module: "spring-data-rest-core"
+    }
+    compile("org.springframework.data:spring-data-rest-core:${springDataRestVersion}"){
+        exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
+    }
+
+//    testCompile group: 'com.jayway.restassured', name:'rest-assured', version:'2.9.0'
+//
+//
+//    providedRuntime group: 'org.springframework.boot', name:'spring-boot-starter-tomcat'
+}
