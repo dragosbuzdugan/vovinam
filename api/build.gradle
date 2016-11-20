@@ -51,9 +51,13 @@ dependencies {
     compile("org.springframework.data:spring-data-rest-webmvc:${springDataRestVersion}"){
         exclude module: "spring-data-rest-core"
     }
+
     compile("org.springframework.data:spring-data-rest-core:${springDataRestVersion}"){
         exclude group: 'org.hibernate', module: 'hibernate-entitymanager'
     }
+
+    runtime group: 'org.webjars', name:'angularjs', version: '1.4.9'
+    runtime group: 'org.webjars', name:'bootstrap', version: '3.3.6'
 
 //    testCompile group: 'com.jayway.restassured', name:'rest-assured', version:'2.9.0'
 //
